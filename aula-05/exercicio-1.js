@@ -8,7 +8,9 @@ function converter(strHoras) {
   let [horas, minutos] = strHoras.split(":").map(Number);
   periodo = horas >= 12 ? "P.M." : "A.M.";
 
-  horas = horas === 12 ? 12 : horas % 12;
+  // horas = horas === 12 ? 12 : horas % 12;
+
+  horas = horas % 12 || 12;
 
   return { horas, minutos, periodo };
 }
